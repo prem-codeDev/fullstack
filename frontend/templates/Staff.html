@@ -1,0 +1,119 @@
+{% extends "staffAsset.html" %} 
+{% block content %}
+{% load static %}
+<body class="">
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <!-- Navbar -->
+        <!-- End Navbar -->
+      </div>
+    </div>
+  </div>
+  <main class="main-content  mt-0">
+    <section>
+      <div class="page-header py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-header pb-0 text-left bg-transparent">
+                  <h1>Basic Detail</h1>
+                </div>
+                <div class="card-body">
+                  <form>
+                    <!-- Staff Details -->
+                    <div class="row g-3">
+                      <div class="col-md-3">
+                        <label class="form-label">Staff Name</label>
+                        <input type="text" name="staffname" class="form-control" placeholder="Name">
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">Staff Code</label>
+                        <input type="text" name="staffcode" class="form-control" placeholder="Code">
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">Division</label>
+                        <input type="text" name="division" class="form-control" placeholder="Division">
+                      </div>
+                    </div>
+                
+                    <!-- Net Salary Section -->
+                    <div class="mt-4">
+                      <h2 class="h5">Net Salary</h2>
+                    </div>
+                    <div class="row g-3 mt-2">
+                      <div class="col-md-3">
+                        <label class="form-label">Salary Type</label>
+                        <select name="salaryType" class="form-select">
+                          <option value="">Select</option>
+                          <option value="Daily">Daily</option>
+                          <option value="Weekly">Weekly</option>
+                          <option value="Monthly">Monthly</option>
+                        </select>
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label">Working Hours</label>
+                        <input type="text" name="Wrkhrs" class="form-control" placeholder="Hours">
+                      </div>
+                    </div>
+                
+                    <!-- Buttons -->
+                    <div class="row justify-content-end mt-4">
+                      <div class="col-auto d-flex gap-3">
+                       <!--buttons-->
+                      </div>
+                    </div>
+                    <button type="submit" class="btn bg-gradient-success">Save</button>
+                    <button type="reset"  class="btn bg-gradient-danger">Cancel</button>
+                    <button type="button" class="btn bg-gradient-primary">Go to list</button>
+                  </form>
+                </div>
+                
+              </div>
+                
+            <div class="col-md-6">
+              <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+                <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-8 mx-auto text-center mt-1">
+          <p class="mb-0 text-secondary">
+            Copyright © <script>
+              document.write(new Date().getFullYear())
+            </script> Soft by Adhoc.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
+  <!--   Core JS Files   -->
+  <script src="{% static '/assets/js/core/popper.min.js' %}"></script>
+  <script src="{% static '/assets/js/core/bootstrap.min.js' %}"></script>
+  <script src="{% static '/assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
+  <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{% static '/assets/js/soft-ui-dashboard.min.js' %}"></script>
+</body>
+{% endblock %}

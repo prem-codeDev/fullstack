@@ -1,0 +1,70 @@
+{% extends "staffAsset.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid py-4">
+  <h3 class="mb-4">List of Employees</h3>
+
+  <!-- Filters and Controls -->
+  <div class="row align-items-center mb-3">
+    <div class="col-md-2">
+      <label for="lengthSelect" class="form-label">Show</label>
+      <select id="lengthSelect" class="form-select">
+        <option value="10" selected>10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="deptSelect" class="form-label">Department</label>
+      <select id="deptSelect" class="form-select">
+        <option value="">All Departments</option>
+        <option value="design">Design</option>
+        <option value="development">Development</option>
+        <option value="production">Production</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="statusFilter" id="activeFilter" value="active" checked>
+        <label class="form-check-label" for="activeFilter">Active</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="statusFilter" id="inactiveFilter" value="inactive">
+        <label class="form-check-label" for="inactiveFilter">Inactive</label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-secondary" type="button">Search</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Employee Table -->
+  <div class="table-responsive">
+    <table class="table table-bordered align-middle">
+      <thead class="table-light">
+        <tr>
+          <th scope="col" style="width: 50px;">S No</th>
+          <th scope="col">Staff Name</th>
+          <th scope="col">Staff Code</th>
+          <th scope="col">Division</th>
+          <th scope="col"></th>
+          <th scope="col">Access</th>
+          <th scope="col">Status</th>
+          <th scope="col" style="width: 120px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="stafflist">
+       <!--List of staff-->
+      </tbody>
+    </table>
+  </div>
+
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> 
+<script src="{% static 'js/stafflst.js' %}"></script>
+{% endblock %}

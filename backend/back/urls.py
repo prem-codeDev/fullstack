@@ -1,0 +1,31 @@
+from django.urls import path
+from . import views 
+urlpatterns = [
+    path('ledger/',views.ledgerView.as_view()),
+    path('ledger/<int:pk>/',views.ledgerDetail.as_view()),
+    path('item/',views.itemView.as_view()),
+    path('item/<int:pk>/',views.itemDetail.as_view()),
+    path('itemgrp/',views.itemGrpView.as_view()),
+    path('itemgrp/<int:pk>/',views.itemGrpDetail.as_view()),
+    path('process/',views.processView.as_view()),
+    path('process/<int:pk>/',views.processDetail.as_view()),
+    path('dept/',views.deptView.as_view()),
+    path('dept/<int:pk>/',views.deptDetail.as_view()),
+    path('bank/',views.bankView.as_view()),
+    path('bank/<int:pk>/',views.bankDetail.as_view()),
+    path('tax/',views.taxView.as_view()),
+    path('tax/<int:pk>/',views.taxDetail.as_view()),
+    path('rout/',views.routsView.as_view()),
+    path('rout/<int:pk>/',views.routDetail.as_view()),
+    path('itemcode/',views.generate_item_code),
+    path('sac/',views.sacView.as_view()),
+    path('sac/<int:pk>/',views.sacView.as_view()),
+    path('jo/',views.JOView.as_view()),
+    path('jo/<int:pk>/',views.JODetail.as_view()),
+    path('orderno/',views.generate_order_no),
+    path('jorder/',views.card),
+    path('jcard/',views.JcardView.as_view()),
+    path('jcard/<int:pk>/',views.jcardDetail.as_view()),
+    path('staff/',views.StaffView.as_view()),
+    path('staff/<int:pk>', views.StaffDetail.as_view())
+]
